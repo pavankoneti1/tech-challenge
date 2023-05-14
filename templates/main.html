@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'main.js' %}"></script>
+    <title>main</title>
+</head>
+<body>
+
+    <div class="user" style="height:50px; background-color: cornflowerblue; text-align: center; margin: auto; font-size: 30px; border-radius: 5px; color: rgb(230, 230, 25);">
+        welcome {{user}}
+    </div>
+
+        <p id="time">5</p>
+
+    <div style="display: flex; justify-content: center;">
+        <img src="{% static 'images/first.png' %}" id="change-img"><br>
+    </div>
+<!--    <script src="main.js"></script>-->
+    <p id="name" style="text-align: center;">one</p>
+
+    <form name="myForm" id="myForm" method="post">
+        {% csrf_token %}
+         <input id="status" type="text" hidden value="" name="statuses">
+    </form>
+</body>
+</html>

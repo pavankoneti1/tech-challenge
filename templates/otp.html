@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'otp.css' %}">
+    <title>otp</title>
+</head>
+<body>
+        <centre style="color:red; font-size:bold">{{error}}</centre>
+    <div>
+        <p class="text">OTP successfully sent to +91{{mobile}} enter otp to login</p>
+        {% csrf_token %}
+        <form method="post">
+            {% csrf_token %}
+            <p class="text-1">Enter OTP</p>
+            <input class="input" type="text" name="otp" maxlength="5">
+            <button type="submit" class="button" name="mobile1" value="{{mobile}}">Submit OTP</button>
+        </form>
+    </div>
+</body>
+</html>
