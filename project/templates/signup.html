@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+    <title>signup</title>
+</head>
+<body>
+
+{% if error %}
+    <p style="color:red">mobile number already exists kindly login</p>
+{% endif %}
+    <div class="box">
+        <form method="post">
+            {% csrf_token %}
+            name : <input type="text" name="name" class="first" required><br>
+            mobile : <input type="text" name="mobile" class="second"><br>
+            <button type="submit" name="button" class="button">get OTP </button>
+        </form><br>
+        already have account?<a href="/">login</a>
+    </div>
+
+
+<!--{% csrf_token %}-->
+<!--<form method="post">-->
+<!--    {{form.as_p}}-->
+<!--    <button type="submit">get otp</button>-->
+<!--</form>-->
+</body>
+</html>

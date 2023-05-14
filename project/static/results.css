@@ -1,0 +1,10 @@
+table, td, th {
+    /* width: 80%; */
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+table {
+    width:80%;
+    margin: auto;
+}

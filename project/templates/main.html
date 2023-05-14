@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'main.js' %}"></script>
+    <title>main</title>
+</head>
+<body>
+
+    <div class="user" style="height:50px; background-color: cornflowerblue; text-align: center; margin: auto; font-size: 30px; border-radius: 5px; color: rgb(230, 230, 25);">
+        welcome {{user}}
+    </div>
+
+    <div id="main" style="visibility: hidden;">
+        <p id="time">time remaining :5</p>
+        <p id="state" style="text-align: center; font-size: 20px;"></p>
+
+
+    <div style="display: flex; justify-content: center;">
+        <img src="{% static 'images/first.png' %}" id="change-img"><br>
+    </div>
+    <p id="name" style="text-align: center;">one</p>
+
+    <form name="myForm" id="myForm" method="post">
+        {% csrf_token %}
+         <input id="status" type="text" hidden value="" name="statuses">
+    </form>
+
+    </div>
+
+    <div id="instructions" style="position: absolute; top: 60px;">
+        <h3>instructions :</h3>
+        <p>1. press left arrow for 'rejecting' image</p>
+        <p>2. press right arrow for 'accepting' image</p>
+        <p>3. press up arrow for 'no response' image</p>
+        <p>4. For every image only 5 seconds </p>
+
+        <div>
+            <button id='start' onclick="start()" type="button" style="border-radius: 5px; font-weight: bold; background-color: greenyellow; display: flex; margin: auto; margin-top: 50px; padding:8px; font-size: large;"> start</button>
+        </div>
+    </div>
+
+</body>
+</html>

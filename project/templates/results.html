@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'results.css' %}">
+    <title>results</title>
+</head>
+<body>
+        <table>
+            <tr>
+                <th>date</th>
+                <th>time</th>
+                <th>one</th>
+                <th>two</th>
+                <th>three</th>
+                <th>four</th>
+                <th>five</th>
+            </tr>
+            {% for date, time, res in z %}
+                <tr>
+                    <td>{{date}}</td>
+                    <td>{{time}}</td>
+                    {% for r in res %}
+                        <td>{{r}}</td>
+                    {% endfor %}
+                </tr>
+
+            {% endfor %}
+        </table>
+
+</body>
+</html>

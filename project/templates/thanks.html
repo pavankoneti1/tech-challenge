@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'thanks.css' %}">
+    <title>thanks</title>
+</head>
+<body>
+    <div class="main">
+        <div class="inner">
+            {{user}}, you have rated all the images. Thank You!
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="button">
+                <button type="submit">show results</button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>
